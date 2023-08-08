@@ -22,8 +22,8 @@
    IN THE SOFTWARE.
 */
 
-#ifndef TRAJECTORY_HPP
-#define TRAJECTORY_HPP
+#ifndef GCOPTER_TRAJECTORY_HPP_
+#define GCOPTER_TRAJECTORY_HPP_
 
 #include <Eigen/Eigen>
 #include <cfloat>
@@ -31,7 +31,7 @@
 #include <iostream>
 #include <vector>
 
-#include "gcopter/root_finder.hpp"
+#include "gcopter_trajectory/root_finder.hpp"
 
 template <int D>
 class Piece {
@@ -447,4 +447,4 @@ class Trajectory {
   }
 };
 
-#endif
+#endif  // GCOPTER_TRAJECTORY_HPP_

@@ -81,7 +81,8 @@ inline bool overlap(const Eigen::MatrixX4d &hPoly0,
 }
 
 struct filterLess {
-  inline bool operator()(const Eigen::Vector3d &l, const Eigen::Vector3d &r) {
+  inline bool operator()(const Eigen::Vector3d &l,
+                         const Eigen::Vector3d &r) const {
     return l(0) < r(0) ||
            (l(0) == r(0) && (l(1) < r(1) || (l(1) == r(1) && l(2) < r(2))));
   }

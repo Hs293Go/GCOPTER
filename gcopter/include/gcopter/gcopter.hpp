@@ -31,9 +31,10 @@
 #include <iostream>
 #include <vector>
 
-#include "gcopter/flatness.hpp"
+#include "gcopter/geo_utils.hpp"
 #include "gcopter/lbfgs.hpp"
 #include "gcopter/minco.hpp"
+#include "gcopter_trajectory/flatness.hpp"
 
 namespace gcopter {
 

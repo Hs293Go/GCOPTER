@@ -29,7 +29,7 @@
 #include <cmath>
 #include <vector>
 
-#include "gcopter/trajectory.hpp"
+#include "gcopter_trajectory/trajectory.hpp"
 
 namespace minco {
 

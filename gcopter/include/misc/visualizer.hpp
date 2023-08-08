@@ -15,7 +15,7 @@
 
 #include "gcopter/geo_utils.hpp"
 #include "gcopter/quickhull.hpp"
-#include "gcopter/trajectory.hpp"
+#include "gcopter_trajectory/trajectory.hpp"
 
 // Visualizer for the planner
 class Visualizer {

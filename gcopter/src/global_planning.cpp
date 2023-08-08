@@ -13,11 +13,11 @@
 #include <vector>
 
 #include "gcopter/firi.hpp"
-#include "gcopter/flatness.hpp"
 #include "gcopter/gcopter.hpp"
 #include "gcopter/sfc_gen.hpp"
-#include "gcopter/trajectory.hpp"
 #include "gcopter/voxel_map.hpp"
+#include "gcopter_trajectory/flatness.hpp"
+#include "gcopter_trajectory/trajectory.hpp"
 #include "misc/visualizer.hpp"
 
 struct Config {
