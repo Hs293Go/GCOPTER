@@ -1,0 +1,5 @@
+{
+  "cmake.configureSettings": {
+    "CMAKE_DISABLE_FIND_PACKAGE_catkin": "ON"
+  }
+}

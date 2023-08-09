@@ -1,3 +1,7 @@
+**/build
+**/example
+
+*.pyc
 # Prerequisites
 *.d
 

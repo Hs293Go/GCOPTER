@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.0.2)
 project(gcopter_trajectory)
 
 find_package(Eigen3 REQUIRED)
+find_package(benchmark REQUIRED)
 
 find_package(catkin)
 if(catkin_FOUND)
@@ -12,6 +13,7 @@ endif()
 
 add_library(${PROJECT_NAME} INTERFACE)
 target_include_directories(${PROJECT_NAME} INTERFACE include)
-target_link_libraries(${PROJECT_NAME} INTERFACE Eigen3::Eigen)
+target_link_libraries(${PROJECT_NAME} INTERFACE Eigen3::Eigen
+                                                benchmark::benchmark)
 
-install(DIRECTORY include/ DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION})
+add_subdirectory(example)

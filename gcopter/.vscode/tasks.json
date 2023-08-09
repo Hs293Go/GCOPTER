@@ -1,0 +1,21 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "build",
+			"type": "shell",
+			"command": "catkin",
+			"args": [
+				"build",
+				"gcopter",
+				"-DCMAKE_EXPORT_COMPILE_COMMANDS=ON",
+				"-DBUILD_TESTS=OFF",
+				"-DBUILD_TESTING=OFF",
+				"-DENABLE_TESTING=OFF"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}/../.."
+			}
+		}
+	]
+}

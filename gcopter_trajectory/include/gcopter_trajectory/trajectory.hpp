@@ -31,6 +31,7 @@
 #include <iostream>
 #include <vector>
 
+#include "fsc_data/json.hpp"
 #include "gcopter_trajectory/root_finder.hpp"
 
 template <int D>
@@ -49,6 +50,14 @@ class Piece {
 
   Piece(double dur, const CoefficientMat &cMat)
       : duration(dur), coeffMat(cMat) {}
+
+  template <typename Alloc>
+  fsc::json::Value asJson(Alloc &alloc) {
+    fsc::json::Value val(fsc::json::kObjectType);
+    val.AddMember("duration", duration, alloc);
+    val.AddMember("coeffMat", fsc::AsJson(coeffMat, alloc), alloc);
+    return val;
+  }
 
   inline int getDim() const { return 3; }
 
@@ -276,6 +285,17 @@ class Trajectory {
     for (int i = 0; i < N; i++) {
       pieces.emplace_back(durs[i], cMats[i]);
     }
+  }
+
+  template <typename Alloc>
+  fsc::json::Value asJson(Alloc &alloc) {
+    fsc::json::Value arr(fsc::json::kArrayType);
+    for (auto &&it : pieces) {
+      arr.PushBack(it.asJson(alloc), alloc);
+    }
+    fsc::json::Value val(fsc::json::kObjectType);
+    val.AddMember("trajectory", arr, alloc);
+    return val;
   }
 
   inline int getPieceNum() const { return pieces.size(); }
